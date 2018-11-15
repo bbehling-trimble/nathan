@@ -25,7 +25,7 @@ Add a Leaflet map using OSM as the basemap.
 
 The table will be populated using JSON data in this repo. 
 
-Must use RxJS to get the data as an HTTP request and must update the table uisng an observable.
+Must use RxJS to get the data as an HTTP request and must update the table using an observable.
 
 The button will be a component in each row. This button will zoom to a point contained in the data. Can use JS click event or RxJS observable.
 
