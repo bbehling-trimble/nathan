@@ -33,4 +33,4 @@ This solution must be responsive.
 
 Extra Credit - use TypeScript React
 
-NOTE: There will be one item that is purposely designed not to work. Don't spend too much time on it. If you find it and can resolve it, great! See if you can gracefully handle this error.
+NOTE: There will be one item that is purposely designed not to work. Don't spend too much time on it. See if you can gracefully handle this error.
