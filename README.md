@@ -19,17 +19,17 @@
   * Bootstrap HTML table
   * Bootstrap Button
 
-Use Create React App CLI to make a new app
+Must use Create React App CLI to make a new app
 
 Add a Leaflet map using OSM as the basemap.
 
 The table will be populated using JSON data in this repo. Use this as the data source for the table.
 
-Must use RxJS to get the data and update of the table uisng an observable.
+Must use RxJS to get the data as an HTTP request and must update of the table uisng an observable.
 
 The button will be a component in each row. This button will zoom to a point contained in the data. Can use JS click event or RxJS observable.
 
-Map, Table, and Button must be React components.
+Map, Table, and Button must be seperate React components.
 
 This solution must be responsive.
 
