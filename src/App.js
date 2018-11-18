@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 
 import './App.css';
 import store from './store.js';
+import LeafletMap from './components/LeafletMap';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        </header>
+        <LeafletMap />
       </div>
     );
   }
