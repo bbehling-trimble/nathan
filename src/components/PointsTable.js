@@ -7,14 +7,7 @@ import L from 'leaflet';
 import ZoomButton from './ZoomButton';
 
 // CUSTOM CRS FOR LEAFLET PROJECTION
-let crs = new L.Proj.CRS("EPSG:26912",
-    "+proj=utm +zone=12 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
-    {
-        origin: [673560.08, 4526299.91],
-        resolutions: [45200, 22600, 11300, 5650, 2825, 1412.5, 706.25, 353.125, 176.5625, 88.28125, 44.140625],
-        tileSize: 256,
-        bounds: [673560.08, 4526299.91]
-    });
+let crs = new L.Proj.CRS("EPSG:26912", "+proj=utm +zone=12 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
 class PointsTable extends Component {
     constructor(props) {
         super(props)
