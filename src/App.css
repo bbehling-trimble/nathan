@@ -1,9 +1,4 @@
-.App {
-
-}
-
 .leaflet-container {
-  height: 400px;
-  width: 40%;
-  margin: 0 auto;
+  height: 600px;
+  width: 100%;
 }

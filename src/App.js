@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Observable } from 'rxjs';
+import { Grid, Row } from 'react-bootstrap';
 
 import './App.css';
 import LeafletMap from './components/LeafletMap';
@@ -25,9 +26,11 @@ const data$ = Observable.create((observer) => {
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <LeafletMap data$={data$} />
-      </div>
+      <Grid>
+        <Row xs={12} md={6} lg={4}>
+          <LeafletMap data$={data$} />
+        </Row>
+      </Grid>
     );
   }
 }
