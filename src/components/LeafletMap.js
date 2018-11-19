@@ -5,10 +5,20 @@ class LeafletMap extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            lat: 38.967,
-            lng: -104.722,
-            zoom: 8
+            lat: '38.970',
+            lng: '-104.717',
+            zoom: 8,
+            points: []
         }
+    }
+
+    componentWillMount() {
+        this.props.data$.subscribe((data) => {
+            this.setState({
+                ...this.state,
+                points: [...data.points]
+            })
+        })
     }
 
     render() {
