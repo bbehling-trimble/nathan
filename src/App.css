@@ -1,8 +1,10 @@
 .container {
   width: 100%;
+  padding: 10px;
 }
 
 .leaflet-container {
   height: 600px;
-  width: 90%;
+  width: 100%;
+  margin: 0 auto;
 }

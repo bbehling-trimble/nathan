@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 
 class ZoomButton extends Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
         return (
-            <Button>View</Button>
+            <Button bsStyle="info">View</Button>
         )
     }
 }

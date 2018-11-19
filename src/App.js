@@ -9,6 +9,7 @@ import PointsTable from './components/PointsTable';
 // FILE PULLED FROM BASIC EXPRESS SERVER TO DEAL WITH CORS ISSUE
 const url = 'https://mrburgo-trimble-express.herokuapp.com/points';
 
+// CREATE OBSERVABLE TO MAKE HTTP REQUEST FOR MAP POINTS
 const data$ = Observable.create((observer) => {
   fetch(url, {
     headers: {
