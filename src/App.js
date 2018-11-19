@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Observable } from 'rxjs';
-import { Grid, Row } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 import './App.css';
 import LeafletMap from './components/LeafletMap';
+import PointsTable from './components/PointsTable';
 
 // FILE PULLED FROM BASIC EXPRESS SERVER TO DEAL WITH CORS ISSUE
 const url = 'https://mrburgo-trimble-express.herokuapp.com/points';
@@ -26,9 +27,15 @@ const data$ = Observable.create((observer) => {
 class App extends Component {
   render() {
     return (
-      <Grid>
-        <Row xs={12} md={6} lg={4}>
-          <LeafletMap data$={data$} />
+      <Grid className="container">
+        <Row>
+          <Col xs={12} md={7}>
+            <LeafletMap />
+          </Col>
+          <Col xs={0} md={1}></Col>
+          <Col xs={12} md={4}>
+            <PointsTable data$={data$} />
+          </Col>
         </Row>
       </Grid>
     );

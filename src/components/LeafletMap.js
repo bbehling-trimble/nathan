@@ -7,18 +7,8 @@ class LeafletMap extends Component {
         this.state = {
             lat: '38.970',
             lng: '-104.717',
-            zoom: 8,
-            points: []
+            zoom: 8
         }
-    }
-
-    componentWillMount() {
-        this.props.data$.subscribe((data) => {
-            this.setState({
-                ...this.state,
-                points: [...data.points]
-            })
-        })
     }
 
     render() {
