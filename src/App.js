@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Observable } from 'rxjs';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
 
 import './App.css';
 import LeafletMap from './components/LeafletMap';
@@ -31,14 +31,15 @@ class App extends Component {
     this.state = {
       lat: 38.970,
       lng: -104.717,
-      zoom: 8
+      zoom: 8,
+      tableOnMap: true
     };
     
     this.navigate = this.navigate.bind(this);
+    this.toggleLocation = this.toggleLocation.bind(this);
   }
 
   navigate(lat, lng) {
-    console.log(lat, lng)
     this.setState({
       lat,
       lng,
@@ -46,17 +47,35 @@ class App extends Component {
     })
   }
 
+  toggleLocation() {
+    console.log('hit');
+    this.setState({
+      ...this.state,
+      tableOnMap: !this.state.tableOnMap
+    })
+  }
+
   render() {
     return (
       <Grid className="container">
         <Row>
-          <Col xs={12} md={7}>
-            <LeafletMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} />
-          </Col>
           <Col xs={0} md={1}></Col>
+          { this.state.tableOnMap ? 
+          <Col xs={12} md={10}>
+            <PointsTable tableOnMap={this.state.tableOnMap} data$={data$} navigate={this.navigate} />
+            <Button onClick={this.toggleLocation} bsStyle="info" className="map-button">Toggle Table Location</Button>
+            <LeafletMap toggleLocation={this.toggleLocation} lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} />
+          </Col> : 
+          <Col xs={12} md={6}>
+            <Button onClick={this.toggleLocation} bsStyle="info" className="map-button">Toggle Table Location</Button>
+            <LeafletMap toggleLocation={this.toggleLocation} lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} />
+          </Col>}
+          { !this.state.tableOnMap ? 
           <Col xs={12} md={4}>
-            <PointsTable data$={data$} navigate={this.navigate} />
-          </Col>
+            <PointsTable tableOnMap={this.state.tableOnMap} data$={data$} navigate={this.navigate} />
+          </Col> : null
+          }
+          <Col xs={0} md={1}></Col>
         </Row>
       </Grid>
     );

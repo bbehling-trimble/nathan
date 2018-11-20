@@ -6,5 +6,28 @@
 .leaflet-container {
   height: 600px;
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+}
+
+.map {
+  border: 2px solid black;
+}
+
+.table-map {
+  position: absolute !important;
+  width: 500px;
+  top: 5px;
+  right: 25px;
+  z-index: 2000000;
+}
+
+.table-map thead, th {
+  background-color: white;
+}
+
+.map-button {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  z-index: 2000000;
 }

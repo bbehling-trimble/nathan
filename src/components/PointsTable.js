@@ -35,7 +35,7 @@ class PointsTable extends Component {
 
     render() {
         return (
-            <Table striped bordered>
+            <Table className={this.props.tableOnMap ? "table-map" : null } striped bordered>
                 <thead>
                     <tr>
                         <th></th>
