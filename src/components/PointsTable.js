@@ -22,7 +22,9 @@ class PointsTable extends Component {
             // CONVERT EPSG:26912 TO LAT/LNG
             let navData = data.points.map((x) => {
                 let point = L.point(x.lat, x.lon)
-                return crs.projection.unproject(point);
+                point = crs.projection.unproject(point);
+                point.label = x.label
+                return point
             })
             this.setState({
                 ...this.state,
@@ -45,7 +47,7 @@ class PointsTable extends Component {
                 <tbody>
                     { this.state.points.map((point, i) => (
                         <tr key={i}>
-                            <th>{ <ZoomButton key={i} /> }</th>
+                            <th>{ <ZoomButton navigate={this.props.navigate} point={point} key={i} /> }</th>
                             <th>{point.label}</th>
                             <th>{point.lat.toFixed(3)}</th>
                             <th>{point.lng.toFixed(3)}</th>

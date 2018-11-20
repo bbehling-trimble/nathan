@@ -26,16 +26,36 @@ const data$ = Observable.create((observer) => {
 });
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lat: 38.970,
+      lng: -104.717,
+      zoom: 8
+    };
+    
+    this.navigate = this.navigate.bind(this);
+  }
+
+  navigate(lat, lng) {
+    console.log(lat, lng)
+    this.setState({
+      lat,
+      lng,
+      zoom: 11
+    })
+  }
+
   render() {
     return (
       <Grid className="container">
         <Row>
           <Col xs={12} md={7}>
-            <LeafletMap />
+            <LeafletMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} />
           </Col>
           <Col xs={0} md={1}></Col>
           <Col xs={12} md={4}>
-            <PointsTable data$={data$} />
+            <PointsTable data$={data$} navigate={this.navigate} />
           </Col>
         </Row>
       </Grid>
