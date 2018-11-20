@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
-import { Button } from 'react-bootstrap';
 
 class LeafletMap extends Component {
     constructor(props) {

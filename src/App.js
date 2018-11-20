@@ -48,7 +48,6 @@ class App extends Component {
   }
 
   toggleLocation() {
-    console.log('hit');
     this.setState({
       ...this.state,
       tableOnMap: !this.state.tableOnMap
@@ -64,11 +63,11 @@ class App extends Component {
           <Col xs={12} md={10}>
             <PointsTable tableOnMap={this.state.tableOnMap} data$={data$} navigate={this.navigate} />
             <Button onClick={this.toggleLocation} bsStyle="info" className="map-button">Toggle Table Location</Button>
-            <LeafletMap toggleLocation={this.toggleLocation} lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} />
+            <LeafletMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} />
           </Col> : 
           <Col xs={12} md={6}>
             <Button onClick={this.toggleLocation} bsStyle="info" className="map-button">Toggle Table Location</Button>
-            <LeafletMap toggleLocation={this.toggleLocation} lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} />
+            <LeafletMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} />
           </Col>}
           { !this.state.tableOnMap ? 
           <Col xs={12} md={4}>
